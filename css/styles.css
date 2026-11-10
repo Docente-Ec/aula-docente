@@ -1,0 +1,67 @@
+:root{
+  --fondo:#F4F6F8; --superficie:#fff; --borde:#E3E8EE;
+  --texto:#1B2430; --suave:#5B6675;
+  --primario:#1F6F5C; --primario-claro:#E3F2EE; --primario-texto:#175646;
+  --alerta:#FCEBD5; --alerta-texto:#7A4306;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--fondo);color:var(--texto)}
+.app{display:flex;min-height:100vh}
+
+.side{width:224px;flex:none;background:var(--superficie);border-right:1px solid var(--borde);padding:24px 16px}
+.logo{font-weight:700;font-size:18px;color:var(--primario);padding:0 12px 20px}
+#menu{display:flex;flex-direction:column;gap:4px}
+.nav{display:flex;align-items:center;gap:12px;width:100%;padding:11px 12px;border:0;background:none;
+  border-radius:10px;font:500 14pxsystem-ui,sans-serif;color:#4A5565;cursor:pointer;text-align:left}
+.nav i{width:8px;height:8px;border-radius:50%;background:#B8C2CE}
+.nav:hover{background:var(--fondo)}
+.nav.on{background:var(--primario-claro);color:var(--primario-texto);font-weight:600}
+.nav.on i{background:var(--primario)}
+
+.main{flex:1;padding:32px 36px;min-width:0}
+h1{margin:0;font-size:26px}
+.sub{color:var(--suave);margin-top:4px}
+
+.card{background:var(--superficie);border:1px solid var(--borde);border-radius:16px;padding:20px}
+.btn{background:var(--primario);color:#fff;border:0;border-radius:10px;padding:10px 18px;
+  font:600 14pxsystem-ui,sans-serif;min-height:44px;cursor:pointer}
+.side-foot{display:flex;flex-direction:column;gap:8px;margin-top:24px}
+.btn-sec{background:none;border:1px solid var(--borde);border-radius:10px;padding:10px 12px;
+  font:500 13pxsystem-ui,sans-serif;color:var(--suave);cursor:pointer;min-height:44px}
+.btn-sec:hover{background:var(--fondo)}
+.form{display:grid;gap:16px;max-width:560px;margin-top:20px}
+label,.lbl{display:grid;gap:6px;font-size:13px;color:var(--suave);font-weight:500}
+input{padding:10px 12px;border:1px solid var(--borde);border-radius:10px;font:14pxsystem-ui,sans-serif;min-height:44px;color:var(--texto)}
+.per{display:flex;gap:8px;margin:8px 0}
+.per input{flex:1}
+.fila{display:flex;gap:8px;align-items:center;margin-top:20px}
+.fila input{flex:1}
+.grid-cursos{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:16px}
+.cab{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}
+.cab h2{margin:0;font-size:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--primario-claro);color:var(--primario-texto);padding:6px 6px 6px 12px;border-radius:999px;font-size:13px;font-weight:500}
+.chip button{border:0;background:none;color:inherit;font-size:16px;cursor:pointer;min-width:28px;min-height:28px}
+textarea,select{padding:10px 12px;border:1px solid var(--borde);border-radius:10px;font:14px system-ui,sans-serif;color:var(--texto);background:#fff}
+select{min-height:44px}
+.tabla{width:100%;border-collapse:collapse;font-size:14px}
+.tabla th{text-align:left;font-size:12px;color:var(--suave);padding:12px 16px;background:#F9FAFB;border-bottom:1px solid var(--borde)}
+.tabla td{padding:10px 16px;border-bottom:1px solid #EEF1F4}
+.tabla tr:last-child td{border-bottom:0}
+.der{text-align:right;white-space:nowrap}
+.tabla-wrap{padding:0;overflow-x:auto;margin-top:16px}
+.c{text-align:center}
+.mut{font-size:12px;color:var(--suave);font-weight:400}
+.nota{width:76px;text-align:center;padding:8px}
+.x{border:0;background:none;color:var(--suave);font-size:16px;cursor:pointer;min-width:28px;min-height:28px}
+.tag{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--primario-claro);color:var(--primario-texto)}
+.tag.w{background:var(--alerta);color:var(--alerta-texto)}
+@media (max-width:800px){
+  .app{flex-direction:column}
+  .side{width:100%;border-right:0;border-bottom:1px solid var(--borde);padding:12px}
+  .logo{padding-bottom:8px}
+  #menu{flex-direction:row;overflow-x:auto}
+  .nav{width:auto;white-space:nowrap}
+  .main{padding:20px 16px}
+  .side-foot{flex-direction:row;margin-top:8px}
+}

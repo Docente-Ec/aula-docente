@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aula Docente</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <div class="logo">Aula Docente</div>
+      <nav id="menu">
+        <button class="nav on" data-modulo="panel"><i></i>Panel</button>
+        <button class="nav" data-modulo="cursos"><i></i>Cursos</button>
+        <button class="nav" data-modulo="estudiantes"><i></i>Estudiantes</button>
+        <button class="nav" data-modulo="notas"><i></i>Calificaciones</button>
+        <button class="nav" data-modulo="tareas"><i></i>Tareas</button>
+        <button class="nav" data-modulo="asistencia"><i></i>Asistencia</button>
+        <button class="nav" data-modulo="planificaciones"><i></i>Planificaciones</button>
+        <button class="nav" data-modulo="config"><i></i>Configuración</button>
+      </nav>
+      <div class="side-foot">
+  <button class="btn-sec" id="btnExportar">Exportar respaldo</button>
+  <button class="btn-sec" id="btnImportar">Importar respaldo</button>
+  <input type="file" id="archivoImportar" accept=".json" hidden>
+</div>
+    </aside>
+
+    <main class="main" id="vista">
+      <h1>Panel</h1>
+      <p class="sub">Estructura base lista.</p>
+    </main>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/cursos.js"></script>
+  <script src="js/estudiantes.js"></script>
+  <script src="js/notas.js"></script>
+  <script src="js/tareas.js"></script>
+  <script src="js/asistencia.js"></script>
+  <script src="js/planificaciones.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
