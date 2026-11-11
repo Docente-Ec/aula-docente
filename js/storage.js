@@ -11,7 +11,10 @@ const Storage = {
   },
 
   guardar(clave, valor) {
+    const s = Nube.sesion();
+    if (s && s.rol === "admin") return;          // el administrador solo lee
     localStorage.setItem(this.prefijo + clave, JSON.stringify(valor));
+    if (s) Nube.subir(clave, valor);
   },
 
   nuevoId() {
@@ -39,7 +42,9 @@ const Storage = {
         Object.entries(datos).forEach(([k, v]) => {
           if (k.startsWith(this.prefijo)) localStorage.setItem(k, JSON.stringify(v));
         });
-        alTerminar(true);
+        const s = Nube.sesion();
+        if (s && s.rol === "docente") Nube.subirTodo().then(() => alTerminar(true), () => alTerminar(true));
+        else alTerminar(true);
       } catch { alTerminar(false); }
     };
     lector.readAsText(archivo);
